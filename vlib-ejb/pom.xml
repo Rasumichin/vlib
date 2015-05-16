@@ -21,6 +21,11 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.jpatterns</groupId>
+            <artifactId>jpatterns</artifactId>
+            <version>0.0.1</version>
+        </dependency>
+        <dependency>
             <groupId>javax</groupId>
             <artifactId>javaee-api</artifactId>
             <version>6.0</version>

@@ -1,1 +1,4 @@
 nb-configuration.xml
+/vlib-ejb/target/
+/vlib-ear/target/
+/vlib-web/target/
