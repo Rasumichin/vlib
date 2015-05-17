@@ -11,23 +11,26 @@
     </h:head>
     <h:body>
         <h3>Inventory Facelet</h3>
-        <p:dataTable var="book" value="#{inventoryView.books}">
-            <p:column headerText="Title">
-                <h:outputText value="#{book.title}" />
-            </p:column>
+        <h:form>
+            <p:dataTable var="book" value="#{inventoryView.books}" resizableColumns="true" sortMode="multiple">
+                <f:facet name="header">Multiple column sort with Ctrl-Key</f:facet>
+                <p:column headerText="Title" sortBy="#{book.title}">
+                    <h:outputText value="#{book.title}" />
+                </p:column>
 
-            <p:column headerText="Authors">
-                <h:outputText value="#{book.authors}" />
-            </p:column>
+                <p:column headerText="Authors" sortBy="#{book.authors}">
+                    <h:outputText value="#{book.authors}" />
+                </p:column>
 
-            <p:column headerText="Owner">
-                <h:outputText value="#{book.owner}" />
-            </p:column>
+                <p:column headerText="Owner" sortBy="#{book.owner}">
+                    <h:outputText value="#{book.owner}" />
+                </p:column>
 
-            <p:column headerText="Holder">
-                <h:outputText value="#{book.holder}" />
-            </p:column>
-        </p:dataTable>
+                <p:column headerText="Holder" sortBy="#{book.holder}">
+                    <h:outputText value="#{book.holder}" />
+                </p:column>
+            </p:dataTable>
+        </h:form>
     </h:body>
 </html>
 

@@ -4,6 +4,7 @@ import de.jsmithy.vlib.service.Book;
 import de.jsmithy.vlib.service.BookServiceLocal;
 import java.io.Serializable;
 import java.util.List;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.inject.Inject;
@@ -16,10 +17,17 @@ import javax.inject.Inject;
 @ViewScoped
 public class InventoryView implements Serializable {
     @Inject
-    BookServiceLocal bookService;
+    private BookServiceLocal bookService;
+    
+    private List<Book> inventory;
 
     public List<Book> getBooks() {
         System.out.println("### View: getBooks");
-        return bookService.findAllBooks();
+        return inventory;
+    }
+    
+    @PostConstruct
+    void initInventory() {
+        inventory = bookService.findAllBooks();
     }
 }
