@@ -10,17 +10,24 @@
         <title>Inventory</title>
     </h:head>
     <h:body>
-        Inventory Facelet<br/>
-        <p:accordionPanel>
-            <p:tab title="First Tab Title">
-                <h:outputText value= "Lorem"/>
-                ...More content for first tab
-            </p:tab>
-            <p:tab title="Second Tab Title">
-                <h:outputText value="Ipsum" />
-            </p:tab>
-            //any number of tabs
-        </p:accordionPanel>
+        <h3>Inventory Facelet</h3>
+        <p:dataTable var="book" value="#{inventoryView.books}">
+            <p:column headerText="Title">
+                <h:outputText value="#{book.title}" />
+            </p:column>
+
+            <p:column headerText="Authors">
+                <h:outputText value="#{book.authors}" />
+            </p:column>
+
+            <p:column headerText="Owner">
+                <h:outputText value="#{book.owner}" />
+            </p:column>
+
+            <p:column headerText="Holder">
+                <h:outputText value="#{book.holder}" />
+            </p:column>
+        </p:dataTable>
     </h:body>
 </html>
 
